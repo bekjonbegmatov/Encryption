@@ -1,0 +1,32 @@
+#--- Here you enter an encrypted text and it gives
+#--- all possible results, and by meaning you can 
+#--- understand what is written there
+
+
+name=input()
+key=0
+itog=" "
+A=['A' ,'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+al=['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+
+for i in range(26):
+	key+=1	
+	for n in range(len(name)):
+		test = True 
+		for x in range(26):
+
+			if name[n]==al[x]:
+				itog+=al[x-key]
+				test = False
+		if test==True:
+
+			itog+=name[n]
+	print(itog)
+	itog=""
+	print()
+	
+#-------this is so that the console does not close----
+input()                                              #
+#-----------------------------------------------------
+
