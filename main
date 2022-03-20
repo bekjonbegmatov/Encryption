@@ -1,0 +1,66 @@
+A=['A' ,'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+al=['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+#------this will decrypt the word----#
+
+def top(a,name):
+	ans=""
+	d=[]
+
+	
+	for n in range(len(name)):
+		test = True
+		for x in range(26):
+			if name[n]==al[x]:
+				
+				ans+=al[x-a]
+				test = False
+		if test==True:
+
+			ans+=name[n]
+	return ans
+	
+#-------it encrypts the word-------#
+
+def new(a,name):
+	
+
+	ans=""
+	d=[]
+	nu=[]
+	ind=0
+	for i in range(len(al)):
+		g=al[(a+i)%26]
+		ds=A[(a+i)%26]
+		d.append(g)
+		nu.append(ds)
+	for n in range(len(name)):
+		test = True
+		for x in range(26):
+			if name[n]==al[x] :
+				ans+=d[x]
+				test = False
+		if test==True: 
+			ans+=name[n]
+
+	return ans
+
+# 0 it encrypts the word
+# 0 this will decrypt the word
+
+nima=int(input("0 or 1 : "))
+a=int(input("Key: "))
+name=input("Word: ")
+
+if nima==0:
+	df=top(a,name)
+	print(df)
+
+elif nima == 1:
+	s=new(a,name)
+
+	print(s)
+#-------this is so that the console does not close----
+input()                                              #
+#-----------------------------------------------------
+		
